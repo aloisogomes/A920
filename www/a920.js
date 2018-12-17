@@ -7,7 +7,7 @@ A920.prototype.show = function(message, duration, successCallback, errorCallback
   var options = {};
   options.message = message;
   options.duration = duration;
-  cordova.exec(successCallback, errorCallback, 'ToastyPlugin', 'show', [options]);
+  cordova.exec(successCallback, errorCallback, 'A920', 'show', [options]);
 }
 
 // Installation constructor that binds ToastyPlugin to window
