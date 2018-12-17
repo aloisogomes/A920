@@ -15,7 +15,7 @@ A920.install = function() {
   if (!window.plugins) {
     window.plugins = {};
   }
-  window.plugins.toastyPlugin = new A920();
-  return window.plugins.toastyPlugin;
+  window.plugins.a920 = new A920();
+  return window.plugins.a920;
 };
 cordova.addConstructor(A920.install);
