@@ -1,0 +1,35 @@
+{
+  "name": "cordova-plugin-a920",
+  "version": "0.0.1",
+  "description": "An android plugin to use A920 Neptune Lite SDK",
+  "cordova": {
+    "id": "cordova-plugin-a920",
+    "platforms": [
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aloisogomes/a920.git"
+  },
+  "keywords": [
+    "Cordova",
+    "Neptune",
+    "Lite",
+    "SDK",
+    "A920",
+    "cordova-android"
+  ],
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.0.0"
+    }
+  ],
+  "author": "Aloiso Gomes <aloiso.gomes@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aloisogomes/a920/issues"
+  },
+  "homepage": "https://github.com/aloisogomes/a920/"
+}
