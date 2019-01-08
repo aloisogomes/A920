@@ -29,7 +29,7 @@ public class A920 extends CordovaPlugin {
 
   public A920() {
       try {
-            Context context = this.cordova.getActivity().getApplicationContext();
+            Context context = cordova.getActivity().getApplicationContext();
             dal = NeptuneLiteUser.getInstance().getDal(context);
             printer = dal.getPrinter();
         } catch (Exception e) {
