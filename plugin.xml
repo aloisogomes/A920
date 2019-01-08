@@ -10,18 +10,18 @@
     <keywords>cordova,android,a920,neptune,lite,sdk</keywords>
     <repo>https://github.com/aloisogomes/A920.git</repo>
     <issue>https://github.com/aloisogomes/A920/issues</issue>
-  
+
     <engines>
         <engine name="cordova" version=">=3.0.0"/>
     </engines>
-  
+
     <js-module src="www/a920.js" name="a920">
         <clobbers target="window.plugins.a920" />
     </js-module>
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="A920">
-                <param name="android-package" value="com.aloisogomes.cordova.plugin.a920"/>
+                <param name="android-package" value="com.aloisogomes.cordova.plugin.A920"/>
             </feature>
         </config-file>
 
