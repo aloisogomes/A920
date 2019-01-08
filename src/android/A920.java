@@ -2,6 +2,7 @@ package com.aloisogomes.cordova.plugin;
 // The native Toast API
 import android.widget.Toast;
 import android.util.Log;
+import android.content.Context;
 // Cordova-required packages
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
