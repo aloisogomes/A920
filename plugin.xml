@@ -26,5 +26,6 @@
         </config-file>
 
         <source-file src="src/android/A920.java" target-dir="src/com/aloisogomes/cordova/plugin" />
+        <lib-file src="src/android/libs/PaxNeptuneLiteApi_V2.01.00_20171025.jar" target-dir="libs" />
     </platform>
 </plugin>
