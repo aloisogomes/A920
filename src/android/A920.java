@@ -45,7 +45,7 @@ public class A920 extends CordovaPlugin {
     public void init() {
         try {
             printer.init();
-            Log.i("init",true);
+            Log.i("init","true");
         } catch (PrinterDevException e) {
             e.printStackTrace();
             Log.e("init", e.toString());
@@ -100,7 +100,7 @@ public class A920 extends CordovaPlugin {
     public void step(int b) {
         try {
             printer.step(b);
-            log.i("setStep","true");
+            Log.i("setStep","true");
         } catch (PrinterDevException e) {
             e.printStackTrace();
             Log.e("setStep", e.toString());
