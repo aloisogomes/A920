@@ -1,6 +1,7 @@
 package com.aloisogomes.cordova.plugin;
 // The native Toast API
 import android.widget.Toast;
+import android.util.Log;
 // Cordova-required packages
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
@@ -15,16 +16,22 @@ import com.pax.dal.IPrinter;
 import com.pax.dal.entity.EFontTypeAscii;
 import com.pax.dal.entity.EFontTypeExtCode;
 import com.pax.dal.exceptions.PrinterDevException;
-import com.pax.demo.util.GetObj;
-import com.pax.demo.util.TestLog;
+import com.pax.neptunelite.api.NeptuneLiteUser;
 
 public class A920 extends CordovaPlugin {
   private static final String DURATION_LONG = "long";
   private static A920 printerTester;
   private IPrinter printer;
+  private static IDAL dal;
 
   private A920() {
-      printer = GetObj.getDal().getPrinter();
+      try {
+            dal = NeptuneLiteUser.getInstance().getDal(getApplicationContext());
+            printer = dal.getPrinter();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
   }
 
   public static A920 getInstance() {
@@ -37,21 +44,21 @@ public class A920 extends CordovaPlugin {
     public void init() {
         try {
             printer.init();
-            logTrue("init");
+            Log.i("init");
         } catch (PrinterDevException e) {
             e.printStackTrace();
-            logErr("init", e.toString());
+            Log.e("init", e.toString());
         }
     }
 
     public String getStatus() {
         try {
             int status = printer.getStatus();
-            logTrue("getStatus");
+            Log.i("getStatus");
             return statusCode2Str(status);
         } catch (PrinterDevException e) {
             e.printStackTrace();
-            logErr("getStatus", e.toString());
+            Log.e("getStatus", e.toString());
             return "";
         }
 
@@ -60,10 +67,10 @@ public class A920 extends CordovaPlugin {
     public void fontSet(EFontTypeAscii asciiFontType, EFontTypeExtCode cFontType) {
         try {
             printer.fontSet(asciiFontType, cFontType);
-            logTrue("fontSet");
+            Log.i("fontSet");
         } catch (PrinterDevException e) {
             e.printStackTrace();
-            logErr("fontSet", e.toString());
+            Log.e("fontSet", e.toString());
         }
 
     }
@@ -71,20 +78,20 @@ public class A920 extends CordovaPlugin {
     public void spaceSet(byte wordSpace, byte lineSpace) {
         try {
             printer.spaceSet(wordSpace, lineSpace);
-            logTrue("spaceSet");
+            Log.i("spaceSet");
         } catch (PrinterDevException e) {
             e.printStackTrace();
-            logErr("spaceSet", e.toString());
+            Log.e("spaceSet", e.toString());
         }
     }
 
     public void printStr(String str, String charset) {
         try {
             printer.printStr(str, charset);
-            logTrue("printStr");
+            Log.i("printStr");
         } catch (PrinterDevException e) {
             e.printStackTrace();
-            logErr("printStr", e.toString());
+            Log.e("printStr", e.toString());
         }
 
     }
@@ -92,31 +99,31 @@ public class A920 extends CordovaPlugin {
     public void step(int b) {
         try {
             printer.step(b);
-            logTrue("setStep");
+            log.i("setStep");
         } catch (PrinterDevException e) {
             e.printStackTrace();
-            logErr("setStep", e.toString());
+            Log.e("setStep", e.toString());
         }
     }
 
     public void printBitmap(Bitmap bitmap) {
         try {
             printer.printBitmap(bitmap);
-            logTrue("printBitmap");
+            Log.i("printBitmap");
         } catch (PrinterDevException e) {
             e.printStackTrace();
-            logErr("printBitmap", e.toString());
+            Log.e("printBitmap", e.toString());
         }
     }
 
     public String start() {
         try {
             int res = printer.start();
-            logTrue("start");
+            Log.i("start");
             return statusCode2Str(res);
         } catch (PrinterDevException e) {
             e.printStackTrace();
-            logErr("start", e.toString());
+            Log.e("start", e.toString());
             return "";
         }
 
@@ -125,21 +132,21 @@ public class A920 extends CordovaPlugin {
     public void leftIndents(short indent) {
         try {
             printer.leftIndent(indent);
-            logTrue("leftIndent");
+            Log.i("leftIndent");
         } catch (PrinterDevException e) {
             e.printStackTrace();
-            logErr("leftIndent", e.toString());
+            Log.e("leftIndent", e.toString());
         }
     }
 
     public int getDotLine() {
         try {
             int dotLine = printer.getDotLine();
-            logTrue("getDotLine");
+            Log.i("getDotLine");
             return dotLine;
         } catch (PrinterDevException e) {
             e.printStackTrace();
-            logErr("getDotLine", e.toString());
+            Log.e("getDotLine", e.toString());
             return -2;
         }
     }
@@ -147,10 +154,10 @@ public class A920 extends CordovaPlugin {
     public void setGray(int level) {
         try {
             printer.setGray(level);
-            logTrue("setGray");
+            Log.i("setGray");
         } catch (PrinterDevException e) {
             e.printStackTrace();
-            logErr("setGray", e.toString());
+            Log.e("setGray", e.toString());
         }
 
     }
@@ -158,20 +165,20 @@ public class A920 extends CordovaPlugin {
     public void setDoubleWidth(boolean isAscDouble, boolean isLocalDouble) {
         try {
             printer.doubleWidth(isAscDouble, isLocalDouble);
-            logTrue("doubleWidth");
+            Log.i("doubleWidth");
         } catch (PrinterDevException e) {
             e.printStackTrace();
-            logErr("doubleWidth", e.toString());
+            Log.e("doubleWidth", e.toString());
         }
     }
 
     public void setDoubleHeight(boolean isAscDouble, boolean isLocalDouble) {
         try {
             printer.doubleHeight(isAscDouble, isLocalDouble);
-            logTrue("doubleHeight");
+            Log.i("doubleHeight");
         } catch (PrinterDevException e) {
             e.printStackTrace();
-            logErr("doubleHeight", e.toString());
+            Log.e("doubleHeight", e.toString());
         }
 
     }
@@ -179,10 +186,10 @@ public class A920 extends CordovaPlugin {
     public void setInvert(boolean isInvert) {
         try {
             printer.invert(isInvert);
-            logTrue("setInvert");
+            Log.i("setInvert");
         } catch (PrinterDevException e) {
             e.printStackTrace();
-            logErr("setInvert", e.toString());
+            Log.e("setInvert", e.toString());
         }
 
     }
@@ -190,11 +197,11 @@ public class A920 extends CordovaPlugin {
     public String cutPaper(int mode) {
         try {
             printer.cutPaper(mode);
-            logTrue("cutPaper");
+            Log.i("cutPaper");
             return "cut paper successful";
         } catch (PrinterDevException e) {
             e.printStackTrace();
-            logErr("cutPaper", e.toString());
+            Log.e("cutPaper", e.toString());
             return e.toString();
         }
     }
@@ -203,7 +210,7 @@ public class A920 extends CordovaPlugin {
         String resultStr = "";
         try {
             int mode = printer.getCutMode();
-            logTrue("getCutMode");
+            Log.i("getCutMode");
             switch (mode) {
                 case 0:
                     resultStr = "Only support full paper cut";
@@ -223,7 +230,7 @@ public class A920 extends CordovaPlugin {
             return resultStr;
         } catch (PrinterDevException e) {
             e.printStackTrace();
-            logErr("getCutMode", e.toString());
+            Log.e("getCutMode", e.toString());
             return e.toString();
         }
     }
