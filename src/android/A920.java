@@ -29,7 +29,8 @@ public class A920 extends CordovaPlugin {
 
   public A920() {
       try {
-            dal = NeptuneLiteUser.getInstance().getDal(cordova.getActivity());
+            Context context = this.cordova.getActivity().getApplicationContext();
+            dal = NeptuneLiteUser.getInstance().getDal(context);
             printer = dal.getPrinter();
         } catch (Exception e) {
             e.printStackTrace();
