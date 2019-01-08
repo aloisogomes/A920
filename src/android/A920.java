@@ -1,4 +1,4 @@
-package com.aloisogomes.cordova.plugin.A920;
+package com.aloisogomes.cordova.plugin.a920;
 // The native Toast API
 import android.widget.Toast;
 // Cordova-required packages
