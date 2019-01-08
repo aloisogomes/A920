@@ -7,6 +7,7 @@ import android.content.Context;
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.PluginResult;
+import org.apache.cordova.CordovaInterface;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -28,13 +29,6 @@ public class A920 extends CordovaPlugin {
   //private Context context = cordova.getActivity().getWindow().getContext();
 
   public A920() {
-      try {
-            Context context = cordova.getActivity();
-            dal = NeptuneLiteUser.getInstance().getDal(context);
-            printer = dal.getPrinter();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
 
   }
 
@@ -47,6 +41,10 @@ public class A920 extends CordovaPlugin {
 
     public void init() {
         try {
+            Context context = cordova.getActivity();
+            dal = NeptuneLiteUser.getInstance().getDal(context);
+            printer = dal.getPrinter();
+            
             printer.init();
             Log.i("init","true");
         } catch (PrinterDevException e) {
