@@ -47,7 +47,7 @@ public class A920 extends CordovaPlugin {
 
             printer.init();
             Log.i("init","true");
-        } catch (PrinterDevException e) {
+        } catch (Exception e) {
             e.printStackTrace();
             Log.e("init", e.toString());
         }
