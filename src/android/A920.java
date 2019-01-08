@@ -55,7 +55,7 @@ public class A920 extends CordovaPlugin {
     public String getStatus() {
         try {
             int status = printer.getStatus();
-            Log.i("getStatus",true);
+            Log.i("getStatus","true");
             return statusCode2Str(status);
         } catch (PrinterDevException e) {
             e.printStackTrace();
@@ -68,7 +68,7 @@ public class A920 extends CordovaPlugin {
     public void fontSet(EFontTypeAscii asciiFontType, EFontTypeExtCode cFontType) {
         try {
             printer.fontSet(asciiFontType, cFontType);
-            Log.i("fontSet",true);
+            Log.i("fontSet","true");
         } catch (PrinterDevException e) {
             e.printStackTrace();
             Log.e("fontSet", e.toString());
@@ -79,7 +79,7 @@ public class A920 extends CordovaPlugin {
     public void spaceSet(byte wordSpace, byte lineSpace) {
         try {
             printer.spaceSet(wordSpace, lineSpace);
-            Log.i("spaceSet",true);
+            Log.i("spaceSet","true");
         } catch (PrinterDevException e) {
             e.printStackTrace();
             Log.e("spaceSet", e.toString());
@@ -89,7 +89,7 @@ public class A920 extends CordovaPlugin {
     public void printStr(String str, String charset) {
         try {
             printer.printStr(str, charset);
-            Log.i("printStr",true);
+            Log.i("printStr","true");
         } catch (PrinterDevException e) {
             e.printStackTrace();
             Log.e("printStr", e.toString());
@@ -100,7 +100,7 @@ public class A920 extends CordovaPlugin {
     public void step(int b) {
         try {
             printer.step(b);
-            log.i("setStep",true);
+            log.i("setStep","true");
         } catch (PrinterDevException e) {
             e.printStackTrace();
             Log.e("setStep", e.toString());
@@ -110,7 +110,7 @@ public class A920 extends CordovaPlugin {
     public void printBitmap(Bitmap bitmap) {
         try {
             printer.printBitmap(bitmap);
-            Log.i("printBitmap",true);
+            Log.i("printBitmap","true");
         } catch (PrinterDevException e) {
             e.printStackTrace();
             Log.e("printBitmap", e.toString());
@@ -120,7 +120,7 @@ public class A920 extends CordovaPlugin {
     public String start() {
         try {
             int res = printer.start();
-            Log.i("start",true);
+            Log.i("start","true");
             return statusCode2Str(res);
         } catch (PrinterDevException e) {
             e.printStackTrace();
@@ -133,7 +133,7 @@ public class A920 extends CordovaPlugin {
     public void leftIndents(short indent) {
         try {
             printer.leftIndent(indent);
-            Log.i("leftIndent",true);
+            Log.i("leftIndent","true");
         } catch (PrinterDevException e) {
             e.printStackTrace();
             Log.e("leftIndent", e.toString());
@@ -143,7 +143,7 @@ public class A920 extends CordovaPlugin {
     public int getDotLine() {
         try {
             int dotLine = printer.getDotLine();
-            Log.i("getDotLine",true);
+            Log.i("getDotLine","true");
             return dotLine;
         } catch (PrinterDevException e) {
             e.printStackTrace();
@@ -155,7 +155,7 @@ public class A920 extends CordovaPlugin {
     public void setGray(int level) {
         try {
             printer.setGray(level);
-            Log.i("setGray",true);
+            Log.i("setGray","true");
         } catch (PrinterDevException e) {
             e.printStackTrace();
             Log.e("setGray", e.toString());
@@ -166,7 +166,7 @@ public class A920 extends CordovaPlugin {
     public void setDoubleWidth(boolean isAscDouble, boolean isLocalDouble) {
         try {
             printer.doubleWidth(isAscDouble, isLocalDouble);
-            Log.i("doubleWidth",true);
+            Log.i("doubleWidth","true");
         } catch (PrinterDevException e) {
             e.printStackTrace();
             Log.e("doubleWidth", e.toString());
@@ -176,7 +176,7 @@ public class A920 extends CordovaPlugin {
     public void setDoubleHeight(boolean isAscDouble, boolean isLocalDouble) {
         try {
             printer.doubleHeight(isAscDouble, isLocalDouble);
-            Log.i("doubleHeight",true);
+            Log.i("doubleHeight","true");
         } catch (PrinterDevException e) {
             e.printStackTrace();
             Log.e("doubleHeight", e.toString());
@@ -187,7 +187,7 @@ public class A920 extends CordovaPlugin {
     public void setInvert(boolean isInvert) {
         try {
             printer.invert(isInvert);
-            Log.i("setInvert",true);
+            Log.i("setInvert","true");
         } catch (PrinterDevException e) {
             e.printStackTrace();
             Log.e("setInvert", e.toString());
@@ -198,7 +198,7 @@ public class A920 extends CordovaPlugin {
     public String cutPaper(int mode) {
         try {
             printer.cutPaper(mode);
-            Log.i("cutPaper",true);
+            Log.i("cutPaper","true");
             return "cut paper successful";
         } catch (PrinterDevException e) {
             e.printStackTrace();
@@ -211,7 +211,7 @@ public class A920 extends CordovaPlugin {
         String resultStr = "";
         try {
             int mode = printer.getCutMode();
-            Log.i("getCutMode",true);
+            Log.i("getCutMode","true");
             switch (mode) {
                 case 0:
                     resultStr = "Only support full paper cut";
