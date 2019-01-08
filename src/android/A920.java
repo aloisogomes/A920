@@ -25,11 +25,11 @@ public class A920 extends CordovaPlugin {
   private static A920 printerTester;
   private IPrinter printer;
   private static IDAL dal;
-  private Context context = cordova.getActivity().getWindow().getContext();
+  //private Context context = cordova.getActivity().getWindow().getContext();
 
   public A920() {
       try {
-            dal = NeptuneLiteUser.getInstance().getDal(context);
+            dal = NeptuneLiteUser.getInstance().getDal(cordova.getActivity());
             printer = dal.getPrinter();
         } catch (Exception e) {
             e.printStackTrace();
