@@ -25,7 +25,7 @@ public class A920 extends CordovaPlugin {
   private static A920 printerTester;
   private IPrinter printer;
   private static IDAL dal;
-  private Context context = IS_AT_LEAST_LOLLIPOP ? cordova.getActivity().getWindow().getContext() : cordova.getActivity().getApplicationContext();
+  private Context context = cordova.getActivity().getWindow().getContext();
 
   public A920() {
       try {
