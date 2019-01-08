@@ -41,10 +41,10 @@ public class A920 extends CordovaPlugin {
 
     public void init() {
         try {
-            Context context = cordova.getActivity();
-            dal = NeptuneLiteUser.getInstance().getDal(context);
+
+            dal = NeptuneLiteUser.getInstance().getDal(cordova.getActivity());
             printer = dal.getPrinter();
-            
+
             printer.init();
             Log.i("init","true");
         } catch (PrinterDevException e) {
