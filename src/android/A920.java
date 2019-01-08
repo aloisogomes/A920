@@ -289,6 +289,8 @@ public class A920 extends CordovaPlugin {
       String duration;
 
       init();
+      printStr("Oi eu sou o goku","UTF-8");
+      start();
 
 
       try {
