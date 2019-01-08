@@ -25,7 +25,7 @@ public class A920 extends CordovaPlugin {
   private IPrinter printer;
   private static IDAL dal;
 
-  private A920() {
+  public A920() {
       try {
             dal = NeptuneLiteUser.getInstance().getDal(this.cordova.getActivity().getBaseContext());
             printer = dal.getPrinter();
@@ -35,12 +35,12 @@ public class A920 extends CordovaPlugin {
 
   }
 
-  public static A920 getInstance() {
+ /* public static A920 getInstance() {
         if (printerTester == null) {
             printerTester = new A920();
         }
         return printerTester;
-    }
+    }*/
 
     public void init() {
         try {
