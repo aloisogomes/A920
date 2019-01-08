@@ -24,12 +24,12 @@ public class A920 extends CordovaPlugin {
   private static final String DURATION_LONG = "long";
   private static A920 printerTester;
   private IPrinter printer;
-  private static IDAL dal;
+  private IDAL dal;
   //private Context context = cordova.getActivity().getWindow().getContext();
 
   public A920() {
       try {
-            Context context = cordova.getActivity().getApplicationContext();
+            Context context = cordova.getActivity();
             dal = NeptuneLiteUser.getInstance().getDal(context);
             printer = dal.getPrinter();
         } catch (Exception e) {
